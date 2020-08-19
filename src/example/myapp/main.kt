@@ -1,8 +1,9 @@
-import example.myapp.Aquarium
-import example.myapp.TowerTank
+import example.myapp.*
 
 fun main(){
-    buildAquarium();
+    buildAquarium()
+
+    makeFish()
 }
 
 fun buildAquarium(){
@@ -22,5 +23,23 @@ fun buildAquarium(){
 
     var towerTank = TowerTank(diameter = 25, height = 40)
     towerTank.printSize()
+
+}
+
+fun makeFish(){
+    val shark = Shark()
+    shark.printColor()
+    shark.eat()
+    shark.swim()
+
+    val plecostomus = Plecostomus()
+    plecostomus.printColor()
+    plecostomus.eat()
+    plecostomus.swim()
+
+    val plecostomus2 = Plecostomus(fishColor = GreyColor, fishAction = PrintingFishAction("Eat other"))
+    plecostomus2.printColor()
+    plecostomus2.eat()
+    plecostomus2.swim()
 
 }
